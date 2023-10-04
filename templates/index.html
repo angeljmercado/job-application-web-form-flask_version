@@ -3,43 +3,48 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     </head>
     <body>
-        <h1> Job Application Form </h1>
-        <form>
-            <div>
-                <label for="first_name"> First Name: </label>
-                <input type="text" id="first_name" name="first_name" required>
-            </div>
-            <div>
-                <label for="last_name"> Last Name: </label>
-                <input type="text" id="last_name" name="last_name" required>
-            </div>
-            <div>
-                <label for="email"> Email: </label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="date"> Available Date to start </label>
-                <input type="date" id="date" name="date" required>
-            </div>
-            <div>
-                <div id="occupation">
-                    <label>Employed? </label>
-                    <input type="radio" id="Yes" name="occupation" required>
-                    <label for="Yes"> Yes </label>
-
-                    <input type="radio" id="No" name="occupation" required>
-                    <label for="No"> No </label>
-
-                    <input type="radio" id="Self-Employed" name="occupation" required>
-                    <label for="Self-Employed"> Self-Employed </label>
-
-                    <input type="radio" id="Student" name="occupation" required>
-                    <label for="Student"> Student </label>
+        <div class="container">
+            <h1 class="mt-4 mb-4"> Job Application Form </h1>
+            <form>
+                <div class="form-group mb-4">
+                    <label for="first_name"> First Name: </label>
+                    <input class="form-control" type="text" id="first_name" name="first_name" required>
                 </div>
-            </div>
-            <button type="button"> Submit </button>
-        </form>
+                <div class="form-group mb-4">
+                    <label for="last_name"> Last Name: </label>
+                    <input class="form-control" type="text" id="last_name" name="last_name" required>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="email"> Email: </label>
+                    <input class="form-control" type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="date"> Available Date to start </label>
+                    <input class="form-control" type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group mb-4">
+                    <div class="btn-group-vertical" id="occupation">
+                        <label>Employed? </label>
+                        <input class="btn-check form-control" type="radio" id="Yes" name="occupation" required>
+                        <label class="btn btn-outline-secondary" for="Yes"> Yes </label>
+
+                        <input class="btn-check form-control" type="radio" id="No" name="occupation" required>
+                        <label class="btn btn-outline-secondary" for="No"> No </label>
+
+                        <input class="btn-check form-control" type="radio" id="Self-Employed" name="occupation" required>
+                        <label class="btn btn-outline-secondary" for="Self-Employed"> Self-Employed </label>
+
+                        <input class="btn-check form-control" type="radio" id="Student" name="occupation" required>
+                        <label class="btn btn-outline-secondary" for="Student"> Student </label>
+                    </div>
+                </div>
+                <button class="btn btn-secondary mb-4" type="button"> Submit </button>
+            </form>
+        </div> 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
     <body>
 </html>

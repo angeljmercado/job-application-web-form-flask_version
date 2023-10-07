@@ -6,6 +6,7 @@ from flask_mail import Mail, Message
 
 app = Flask(__name__)
 
+# contants for the app instances from the Flask Class
 app.config["SECRET_KEY"] = "mysecretkey"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
@@ -14,13 +15,14 @@ app.config["MAIL_USE_SSL"] = True
 app.config["MAIL_USERNAME"] = config("email")
 app.config["MAIL_PASSWORD"] = config("password")
 
-print(app.config["MAIL_USERNAME"])
-print(app.config["MAIL_PASSWORD"])
+# Instance for the sqlite database
 db = SQLAlchemy(app)
 
+# Instance for the mail function
 mail = Mail(app)
 
 class Form(db.Model):
+    """ creates a database with the columns defined below """
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(80))
     last_name = db.Column(db.String(80))
@@ -46,12 +48,14 @@ def index():
         db.session.add(form)
         db.session.commit()
 
-        message_body = f"""Hello! {first_name}, thank you for submitting a job application with us.""\n" \
-                           We will get back to you shortly.
+        # Variables in preparation to send email message
+        message_body = f"""Hello! {first_name},
+        Thank you for submitting a job application with us.
+        We will get back to you shortly.
                            
-                           Best Regards,
-                           Recruiting Team """
-        message = Message(subject="{first_name} New Job Application from.",
+        Best Regards,
+        Recruiting Team"""
+        message = Message(subject=f"{first_name}'s Job Application.",
         sender=app.config["MAIL_USERNAME"],
         recipients=[email],
         body=message_body)

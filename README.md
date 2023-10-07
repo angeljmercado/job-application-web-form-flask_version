@@ -16,7 +16,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Clone this repository to your local machine:
 
-   `git clone https://github.com/angeljmercado/job-application-web-form-flask_version.git`
+   `git clone https://github.com/angeljmercado/job-application-web-form-flask_version.git`   
    `cd job-application-form`
 
 ### Usage
